@@ -1,0 +1,22 @@
+name: Clans
+version: '${project.version}'
+main: de.clans.ClansPlugin
+api-version: '1.21'
+description: Clan-System komplett per GUI mit Custom-Icons
+softdepend: [PlaceholderAPI]
+commands:
+  clan:
+    description: Öffnet das Clan-Menü
+    usage: /clan
+    aliases: [clans]
+  cc:
+    description: Clan-Chat
+    usage: /cc <Nachricht>
+    aliases: [clan-chat, clanchat]
+permissions:
+  clans.admin:
+    description: Clans auflösen, Skript-Import, /clan admin reload (OPs)
+    default: op
+  clans.bypass-cooldown:
+    description: Keine Cooldowns bei Einladungen, Anfragen usw.
+    default: false

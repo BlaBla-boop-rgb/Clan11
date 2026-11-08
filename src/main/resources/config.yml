@@ -1,0 +1,60 @@
+# Texte nutzen MiniMessage: https://docs.advntr.dev/minimessage/format.html
+
+prefix: "<dark_gray>[<gold>Clan<dark_gray>]<gray> "
+no-clan-name: "kein Clan"
+no-clan-tab: "<dark_gray>[<gray>kein Clan<dark_gray>]"
+
+# Clan-Tag hinter dem Namen in der Tabliste. Der Rang vor dem Namen bleibt unverändert.
+tab-list-name: true
+
+min-length: 3
+max-length: 10
+# 0 = unbegrenzt
+max-members: 20
+# Einladungen verfallen nach X Sekunden
+invite-expire-seconds: 120
+
+# Nur der Leiter darf die Farbe ändern
+color-needs-leader: true
+# Wer darf was bei der Clanfarbe?
+#   booster      = nur vorgegebene Farben
+#   vip-booster  = vorgegebene + eigene Farben (Hex), kein Farbverlauf
+#   main-booster = alles: vorgegebene, eigene, Farbverlauf, fett/kursiv
+#   media        = vorgegebene + eigene Farben, fett/kursiv, kein Farbverlauf
+# Ohne eine dieser Permissions kann niemand die Farbe ändern.
+permissions:
+  booster: "booster.use"
+  vip-booster: "vipbooster.use"
+  main-booster: "mainbooster.use"
+  media: "media.use"
+
+# Spam-Schutz in Sekunden (0 = aus). Mit der Permission clans.bypass-cooldown gelten sie nicht.
+cooldowns:
+  invite: 10                    # zwischen zwei Einladungen (egal an wen)
+  invite-same-player: 60        # erneute Einladung an denselben Spieler
+  ally-request: 15              # zwischen zwei Allianz-Anfragen
+  ally-request-same-clan: 120   # erneute Anfrage an denselben Clan
+  clan-create: 60               # Clan gründen (auch nach dem Auflösen)
+  clan-chat: 1                  # zwischen zwei Clan-Chat-Nachrichten
+  color: 5                      # Clanfarbe / Farbverlauf ändern
+
+# Clans aus dem alten Skript (plugins/Skript/variables.csv) einmalig übernehmen
+import:
+  skript: true
+
+gui:
+  sounds: true
+  # Einmalige Aufbau-Animation beim Öffnen (Spalten blenden von links nach rechts ein)
+  open-animation: true
+
+# Resource Pack mit den Custom-Icons
+resource-pack:
+  # auto   = Custom-Icons nur für Spieler, die das Pack geladen haben (sonst normale Items)
+  # always = immer Custom-Icons (z.B. wenn du das Pack selbst über server.properties verteilst)
+  # never  = nie Custom-Icons
+  mode: auto
+  send-on-join: true
+  required: false
+  # Direktlink zur ClansPack.zip (muss öffentlich erreichbar sein).
+  # Standard: die Datei aus deinem GitHub-Repo. Die Datei liegt auch unter plugins/Clans/ClansPack.zip
+  url: "https://raw.githubusercontent.com/BlaBla-boop-rgb/Clan10/main/src/main/resources/ClansPack.zip"
